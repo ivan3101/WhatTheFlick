@@ -1,0 +1,11 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  margin-bottom: 40px;
+  min-height: 100%;
+  min-width: 100%;
+
+}

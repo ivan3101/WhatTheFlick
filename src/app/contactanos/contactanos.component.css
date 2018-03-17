@@ -1,0 +1,33 @@
+.btn-warning{
+  background-color: #CCAC55;
+  border-color: #CCAC55;
+  font-weight: bolder;
+  color: white;
+}
+
+.form{
+  border: solid 1px gray;
+  margin-bottom: 1em;
+  background-color: white;
+  -moz-box-shadow: -5px 5px 15px;
+  -webkit-box-shadow: -5px 5px 15px;
+  box-shadow: -5px 5px 15px;
+  border-radius: 10px;
+}
+
+.todo{
+  background-color: lightgray;
+}
+
+.display-5{
+  font-weight: bolder;
+}
+
+h2{
+  font-weight: bolder;
+  color: #01579B;
+}
+
+.bg-secondary{
+  background-color: #01579B;
+}

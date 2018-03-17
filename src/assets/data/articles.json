@@ -1,0 +1,34 @@
+[{
+    "id": 0,
+    "title": "Todos los nominados a los Premios Oscars 2018",
+    "date": "09 de Febrero de 2018",
+    "autor": "Jean Mobayed",
+    "story": "Los votantes del Oscar postularon nueve producciones a mejor película: The Shape of Water, Three Billboards Outside Ebbing, Missouri, Lady Bird, Get Out, The Post, Dunkirk, Call Me By Your Name y Phantom Thread.<br><br> The Shape of Water estuvo a punto de igualar el récord de 14 nominaciones que comparten All About Eve (La malvada), Titanic y La La Land. El oscuro relato de fantasía de Del Toro recibió múltiples candidaturas por su elenco (Sally Hawkins, Richard Jenkins, Octavia Spencer), su suntuosa música original (de Alexander Desplat) y su proeza técnica.<br><br> Los Oscar, el más alto honor de la industria cinematográfica en Estados Unidos, se entregarán en una ceremonia en Hollywood el 4 de marzo, que será encabezada por el presentador de televisión y comediante Jimmy Kimmel.",
+    "preview": "Los votantes del Oscar postularon nueve producciones a mejor película: The Shape of Water, Three Billboards Outside Ebbing, Missouri, Lady Bird, Get Out, The Post, Dunkirk, Call Me By Your Name y Phantom Thread. The Shape of Water estuvo a punto de igualar el récord de 14 nominaciones que comparten All About Eve (La malvada), Titanic y La La Land. El oscuro relato de fantasía de Del Toro recibió múltiples candidaturas por su elenco (Sally Hawkins, Richard Jenkins, Octavia Spencer), su suntuosa música original (de Alexander Desplat) y su proeza técnica.",
+    "imageUrl": "../assets/img/noticias/oscars.jpg",
+    "category": "premios",
+    "comments": []
+  },
+  {
+    "id": 1,
+    "title": "Deadpool estrena nuevo poster",
+    "date": "22 de Febrero de 2018",
+    "autor": "Jean Mobayed",
+    "story": "Deadpool 2 tiene nuevo póster y os aviso que es muy, muy ¿sexy? Ryan Reynolds ha compartidoa través de sus redes sociales el cartel-homenaje a Flashdance donde encontramos al mercenario bocazas imitando lafamosa escena de baile de la popular película de los ochenta.Reynolds, que vuelve a interpretar al gamberro antihéroede Marvel, ha hecho público el cartel con un eslogan de Flashdance, muy al estilo de Operación Triunfo: 'Toma tu pasióny haz que suceda'. <br><br>Muchos fans esperaban que 20th Century Fox sorprendiera a todos con un nuevo tráiler de Deadpool 2durante la noche de la Super Bowl, pero no fue así. Sin embargo, Rhett Reese, guionista de la primera películay también de esta secuela, ha calmado a los fans y comentado que no deberíamos preocuparnos. Probablemente conel estreno de Black Panther, el próximo 16 de febrero, llegue un nuevo adelanto.",
+    "preview":"Deadpool 2 tiene nuevo póster y os aviso que es muy, muy ¿sexy? Ryan Reynolds ha compartido a través de sus redes sociales el cartel-homenaje a Flashdance donde encontramos al mercenario bocazas imitando la famosa escena de baile de la popular película de los ochenta.Reynolds, que vuelve a interpretar al gamberro antihéroe de Marvel, ha hecho público el cartel con un eslogan de Flashdance, muy al estilo de Operación Triunfo: 'Toma tu pasión y haz que suceda'.",
+    "imageUrl": "../assets/img/noticias/deadpool.jpg",
+    "category": "superheroes",
+    "comments": []
+  },
+  {
+    "id": 2,
+    "title": "No te pierdas el nuevo trailer de la segunda temporada de Westworld",
+    "date": "10 de Marzo de 2018",
+    "autor": "Jean Mobayed",
+    "story": "Estaba llamada a ser la gran superproducción de HBO para llenar el hueco de Juego de Tronos y ciertamente, tras la primera temporada no dejó a casi nadie indiferente. Tras los problemas con el rodaje, ya conocemos el nuevo trailer y la fecha de estreno de la segunda temporada de WestWorld.<br><br> Además de por sus archiconocidos anuncios, el descanso de la SuperBowl ya está empezando a ser esperado por el estreno de trailers de grandes superproducciones, ya sea del cine y de la televisión. Uno de los trailers más esperados, el de la segunda temporada de WestWorld, ha visto la luz en el gran evento deportivo de EEUU.<br><br> Si estás tan expectante como nosotros por conocer la continuación de esta historia de ciencia ficción, ya puedes apuntar la fecha exacta del estreno: el próximo 22 de abril en HBO.<br><br>",
+    "preview":"Estaba llamada a ser la gran superproducción de HBO para llenar el hueco de Juego de Tronos y ciertamente, tras la primera temporada no dejó a casi nadie indiferente. Tras los problemas con el rodaje, ya conocemos el nuevo trailer y la fecha de estreno de la segunda temporada de WestWorld.Además de por sus archiconocidos anuncios, el descanso de la SuperBowl ya está empezando a ser esperado por el estreno de trailers de grandes superproducciones, ya sea del cine y de la televisión.",
+    "imageUrl": "../assets/img/noticias/westworld.jpg",
+    "category": "series",
+    "comments": []
+  }
+]

@@ -1,0 +1,151 @@
+body{
+  background-color: #333333;
+}
+
+
+
+
+.destacados:hover{
+
+}
+
+img:hover{
+  opacity: 0.8;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.categorias a{
+  cursor: pointer;
+}
+
+.paginacion .active2{
+  transition: all 1.5s ease-in-out;
+  background-color: #01579B;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bolder;
+}
+.paginacion .active3{
+  transition: all 1.5s ease-in-out;
+  background-color: #343a40;
+}
+
+.paginacion a{
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  color: black;
+  border: #333333 1px solid;
+}
+
+.categorias .active2{
+  transition: all 1.5s ease-in-out;
+  background-color: #01579B;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bolder;
+
+}
+
+.categorias .active3{
+  transition: all 1.5s ease-in-out;
+  background-color: #343a40;
+}
+
+.card-text{
+  color: transparent;
+  transition: all 1.0s linear;
+  text-align: center;
+  font-weight: bolder;
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+}
+
+.card:hover{
+  background-color: black;
+  color: white;
+  transition: all 1.0s linear;
+  cursor: pointer;
+}
+
+ .card:hover .card-text{
+  color: white;
+  transition: all 1.0s linear;
+   background-color: black;
+   opacity: 0.85;
+   border-radius: 25px;
+   border: #01579B 2px;
+
+}
+
+ .card{
+   transition: all 1.0s linear;
+ }
+
+ .paginacion{
+   text-decoration: none;
+
+ }
+
+ .principal{
+   background-color: rgba(255, 255, 255, .75);
+   -moz-box-shadow: -5px 5px 15px;
+   -webkit-box-shadow: -5px 5px 15px;
+   box-shadow: -5px 5px 15px;
+   border-radius: 5px;
+   padding-top: 2em;
+   margin-top: 1em;
+   padding-bottom: 1.5em;
+
+ }
+
+ h2{
+   font-family: "Inconsolata";
+   color: #fff;
+   font-weight: bold;
+   padding-top: 1em;
+ }
+
+ .categorias{
+   padding-right: 1em;
+ }
+
+ .card{
+  overflow: hidden;
+  height: 285px;
+  width: 210px;
+   margin-top: 0.25em;
+   margin-right: 0.25em;
+   margin-left: 0.25em;
+   margin-bottom: 0.25em;
+
+ }
+
+.busqueda{
+  transition: all 1.5s ease-in-out;
+  background-color: #01579B;
+  color: #fff;
+  border-radius: 5px;
+  font-style: italic;
+}
+.busqueda2{
+  transition: all 1.5s ease-in-out;
+  background-color: #343a40;
+  color: #fff;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+.imagen2{
+  transition: all 1.5s ease-in-out;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+img{
+  transition: all 1.5s ease-in-out;
+}

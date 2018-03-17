@@ -1,0 +1,25 @@
+.categorias .active2{
+  transition: all 1.5s ease-in-out;
+  background-color: #01579B;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bolder;
+
+}
+.list-group-item:hover{
+  opacity: 0.7;
+}
+
+.categorias .active3{
+  transition: all 1.5s ease-in-out;
+  background-color: #343a40;
+}
+
+.noticia img{
+  height: 410px;
+  width: 740px;
+}
+
+h4{
+
+}

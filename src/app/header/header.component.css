@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster Regular'), local('Lobster-Regular'),
+  url('../../fonts/lobster-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../../fonts/lobster-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.menu1 a:hover{
+
+  color: white;
+}
+
+.logo2{
+  font-family: Lobster;
+}
+
+.navbar a{
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+
+}
+ .navbar{
+   background-color: #01579B;
+   transition: all 1.5s ease-in-out;
+ }
+
+ .dropdown-menu{
+   background-color: #01579B;
+   cursor: pointer;
+ }
+
+
+ h5{
+   color: white;
+ }
+
+ .bg-dark{
+   transition: all 1.5s ease-in-out;
+
+ }
+
+ .fade{
+   transition: all 1.5s linear;
+ }
+
+ .active{
+   font-weight: bolder;
+ }
+
+.btn-primary{
+  transition: all 1.5s ease-in-out;
+}
+.btn-danger{
+  transition: all 1.5s ease-in-out;
+}
+.btn-secondary{
+  transition: all 1.5s ease-in-out;
+}

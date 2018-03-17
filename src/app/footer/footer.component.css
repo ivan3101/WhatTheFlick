@@ -1,0 +1,18 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 40px;
+  background-color: #01579B;
+  transition: all 1.5s ease;
+}
+
+p{
+  text-align: center;
+  color: white;
+}
+
+.bg-dark{
+  transition: all 1.5s ease;
+
+}

@@ -1,32 +1,32 @@
 <div class="container">
   <div class="moviecard">
     <div class="movie-poster play-trailer" id="poster">
-      <img src="/assets/img/peliculas/dunkirk.jpg" alt="">
+      <img [src]="movie?.imageUrl" [alt]="movie?.title">
     </div>
     <div id="movie-content">
       <div class="movie-ratings">
         <span class="star">★</span>
-        <span class="score">8.1</span>
+        <span class="score">{{ movie?.rating }}</span>
         <span class="score-out-of">/ 10 (IMDB)</span>
       </div>
-      <div class="movie-title"><span>Dunkirk</span>
-        <span class="movie-year">(2017)</span>
+      <div class="movie-title"><span>{{ movie?.title }}</span>
+        <span class="movie-year">({{ movie?.year }})</span>
       </div>
-      <div class="movie-details"><span class="movie-rating">PG-13</span>
-        <span class="movie-duration">1h 46min</span>
-        <span class="movie-genre">Acción, Bélica, Drama</span>
+      <div class="movie-details"><span class="movie-rating">PG-{{ movie?.age }}</span>
+        <span class="movie-duration">{{ movie?.duration }}</span>
+        <span class="movie-genre">{{ movie?.category }}</span>
       </div>
       <div class="movie-castcrew">
         <span class="title">Director</span>
-        <span class="name">Christopher Nolan</span>
+        <span class="name">{{ movie?.director }}</span>
       </div>
       <div class="movie-castcrew">
-        <span class="title">Writer</span><span class="name">Christopher Nolan</span>
+        <span class="title">Writer</span><span class="name">{{ movie?.writer }}</span>
       </div>
       <div class="movie-castcrew">
-        <span class="title">Cast</span><span class="name">Fionn Whitehead, Tom Glynn-Carney, Jack Lowden</span>
+        <span class="title">Cast</span><span class="name">{{ movie?.cast }}</span>
       </div>
-      <div class="movie-synopsis text-justify">Se basa en la Operación Dinamo, una acción militar llevada a cabo por Reino Unido con el fin de evacuar cerca de 400 000 soldados de Francia, que había sido invadida por la Alemania nazi en el marco de la Segunda Guerra Mundial.</div>
+      <div class="movie-synopsis text-justify" [innerHTML]="movie?.story"></div>
       <button class="btn btn-primary col-sm4 ml-5 mr-4" id="botonp1" type="button">
         <img  class="mr-2" src="../assets/img/play.png" alt="" style="height: 20px; width: 20px">Marcar como Vista</button>
       <button class="btn btn-danger col-sm-4 ml-4" id="botonp2" routerLink="/peliculas" type="button">

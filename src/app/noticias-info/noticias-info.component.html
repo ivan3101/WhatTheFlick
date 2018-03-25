@@ -2,30 +2,21 @@
   <div class="row justify-content-between ">
     <div class="col-lg-8">
 
-      <h1 class="mt-4 text-center "><strong>Todos los nominados a los Premios Oscars 2018</strong></h1>
+      <h1 class="mt-4 text-center "><strong>{{ article?.title }}</strong></h1>
 
       <hr>
-      <p class="font-italic">16 de Marzo de 2018 por <a href="#"> Jean Mobayed</a></p>
+      <p class="font-italic">{{ article?.date | date }} <a href="#"> {{ article?.autor }}</a></p>
       <hr>
 
       <div class="noticia">
-        <img class="rounded" src="../assets/img/noticias/oscars.jpg" alt="">
+        <img class="rounded" [src]="article?.imageUrl" [alt]="article?.title">
       </div>
 
 
       <hr>
 
-      <p class="text-justify">Los votantes del Oscar postularon nueve producciones a mejor película: "The Shape of Water",
-        ''Three Billboards Outside Ebbing, Missouri", ''Lady Bird", ''Get Out", ''The Post", ''Dunkirk", ''Call Me By Your Name"
-        y "Phantom Thread".<br><br>
-
-        "The Shape of Water" estuvo a punto de igualar el récord de 14 nominaciones que comparten "All About Eve" (“La malvada”),
-        ''Titanic" y "La La Land". El oscuro relato de fantasía de Del Toro recibió múltiples candidaturas por su elenco
-        (Sally Hawkins, Richard Jenkins, Octavia Spencer), su suntuosa música original (de Alexander Desplat) y su proeza técnica.
-        Los Oscar, el más alto honor de la industria cinematográfica en Estados Unidos, se entregarán en una ceremonia en
-        Hollywood el 4 de marzo, que será encabezada por el presentador de televisión y comediante Jimmy Kimmel.
-
-      </p>
+      <div class="text-justify" [innerHTML]="article?.story">
+      </div>
 
       <hr>
 
@@ -44,7 +35,7 @@
       <div class="media mb-5 text-justify">
         <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
         <div class="media-body">
-          <h5 class="mt-0"><strong>Nombre</strong></h5>
+          <h5 class="mt-0"><strong>{{ article?.autor }}</strong></h5>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
         </div>
       </div>

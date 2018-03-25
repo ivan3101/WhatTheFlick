@@ -1,6 +1,6 @@
 export class Movies {
   constructor(
-    public id: number,
+    public _id: number,
     public title: string,
     public story: string,
     public imageUrl: string,

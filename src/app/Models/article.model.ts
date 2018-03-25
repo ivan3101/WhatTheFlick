@@ -2,7 +2,7 @@ import {Comment} from './comment.model';
 
 export class Article {
   constructor(
-    public id: number,
+    public _id: number,
     public title: string,
     public date: string,
     public autor: string,

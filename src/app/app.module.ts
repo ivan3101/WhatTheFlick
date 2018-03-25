@@ -15,7 +15,12 @@ import { PeliculaInfoComponent } from './pelicula-info/pelicula-info.component';
 import { SerieInfoComponent } from './serie-info/serie-info.component';
 import { NoticiasInfoComponent } from './noticias-info/noticias-info.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { SlicePipe } from './pipes/slice.pipe';
+import {ArticleService} from './services/article.service';
+import {MovieService} from './services/movie.service';
+import {SerieService} from './services/serie.service';
+import {UserService} from './services/user.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -29,15 +34,22 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ContactanosComponent,
     PeliculaInfoComponent,
     SerieInfoComponent,
-    NoticiasInfoComponent
+    NoticiasInfoComponent,
+    SlicePipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ArticleService,
+    MovieService,
+    SerieService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

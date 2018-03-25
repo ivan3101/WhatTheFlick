@@ -1,4 +1,6 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {Article} from '../Models/article.model';
+import {ArticleService} from '../services/article.service';
 declare var jQuery: any;
 declare var $: any;
 
@@ -8,10 +10,11 @@ declare var $: any;
   styleUrls: ['./noticias.component.css']
 })
 export class NoticiasComponent implements OnInit, AfterViewChecked {
-
-  constructor() { }
+  articles;
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
+    this.articles = this.articleService.getAllArticles();
   }
 
   ngAfterViewChecked() {
@@ -87,7 +90,7 @@ export class NoticiasComponent implements OnInit, AfterViewChecked {
       $('#botonc2').removeClass('btn-danger');
       $('#botonc2').addClass('btn-secondary');
       $('#botonc3').addClass('btn-secondary');
-    }else{
+    } else {
       $('#menu').removeClass('bg-dark');
       $('#modal1').removeClass('bg-dark');
       $('#modal2').removeClass('bg-dark');

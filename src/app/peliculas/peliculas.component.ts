@@ -1,4 +1,5 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {MovieService} from '../services/movie.service';
 declare var jQuery: any;
 declare var $: any;
 
@@ -9,11 +10,12 @@ declare var $: any;
   styleUrls: ['./peliculas.component.css']
 })
 export class PeliculasComponent implements OnInit, AfterViewChecked {
-
-  constructor() {
+  movies;
+  constructor(private movieService: MovieService) {
   }
 
   ngOnInit() {
+    this.movies = this.movieService.getAllMovies();
   }
 
   ngAfterViewChecked() {

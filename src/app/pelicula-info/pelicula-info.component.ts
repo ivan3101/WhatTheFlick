@@ -1,4 +1,7 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {ArticleService} from '../services/article.service';
+import {ActivatedRoute, Params} from '@angular/router';
+import {MovieService} from '../services/movie.service';
 declare var jQuery: any;
 declare var $: any;
 
@@ -8,11 +11,15 @@ declare var $: any;
   styleUrls: ['./pelicula-info.component.css']
 })
 export class PeliculaInfoComponent implements OnInit, AfterViewChecked {
-  constructor() {
-
-  }
+  movie;
+  movieId;
+  constructor(private route: ActivatedRoute, private movieService: MovieService) {  }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((params: Params) => {
+      this.movieId = params.get('id');
+      this.movieService.getMovieById(this.movieId).subscribe(movie => this.movie = movie);
+    });
   }
 
   ngAfterViewChecked() {

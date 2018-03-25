@@ -16,122 +16,12 @@
       <div class="col-lg-9 col-xs-12 justify-content-center">
         <div class="row justify-content-center">
 
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card" routerLink="/series/id">
-              <img class="card-img img-fluid" id="imagen13" src="/assets/img/series/breakingbad.jpg"
+          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3" *ngFor="let serie of series | async">
+            <div class="card" [routerLink]="['/series', serie._id]">
+              <img class="card-img img-fluid" id="imagen13" [src]="serie.imageUrl"
                    style="width: 210px; height: 285px" alt="Card image">
               <div class="card-img-overlay">
-                  <p class="card-text">Breaking Bad</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen14" src="/assets/img/series/got.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Game of Thrones</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen15" src="/assets/img/series/vikings.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Vikings</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen16" src="/assets/img/series/leftovers.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">The Leftovers</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen17" src="/assets/img/series/rickandmorty.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Rick and Morty</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen18" src="/assets/img/series/greysanatomy.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Grey's Anatomy</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen19" src="/assets/img/series/riverdale.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Riverdale</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen20" src="/assets/img/series/flash.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">The Flash</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen21" src="/assets/img/series/arrow.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Arrow</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen22" src="/assets/img/series/hoc.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">House of Cards</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen23" src="/assets/img/series/mrrobot.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Mr. Robot</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen24" src="/assets/img/series/st.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Stranger Things</p>
+                  <p class="card-text">{{ serie.title }}</p>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 export class Series {
   constructor(
-    public id: number,
+    public _id: number,
     public title: string,
     public story: string,
     public imageUrl: string,

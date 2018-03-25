@@ -1,4 +1,5 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {SerieService} from '../services/serie.service';
 declare var jQuery: any;
 declare var $: any;
 
@@ -8,10 +9,11 @@ declare var $: any;
   styleUrls: ['./series.component.css']
 })
 export class SeriesComponent implements OnInit, AfterViewChecked {
-
-  constructor() { }
+  series;
+  constructor(private serieService: SerieService) { }
 
   ngOnInit() {
+    this.series = this.serieService.getAllSeries();
   }
 
   ngAfterViewChecked() {

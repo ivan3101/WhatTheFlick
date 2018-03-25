@@ -1,34 +1,32 @@
 <div class="container">
   <div class="moviecard">
     <div class="movie-poster play-trailer" id="poster2">
-      <a href="http://www.youtube.com"><img src="/assets/img/series/breakingbad.jpg" alt="" ></a>
+      <a href="http://www.youtube.com"><img [src]="serie?.imageUrl" [alt]="serie?.title" ></a>
     </div>
     <div id="movie-content">
       <div class="movie-ratings">
         <span class="star">★</span>
-        <span class="score">9.5</span>
+        <span class="score">{{ serie?.rating }}</span>
         <span class="score-out-of">/ 10 (IMDB)</span>
       </div>
-      <div class="movie-title"><span>Breaking Bad</span>
-        <span class="movie-year">2008-2013</span>
+      <div class="movie-title"><span>{{ serie?.title }}</span>
+        <span class="movie-year">{{ serie?.year }}</span>
       </div>
-      <div class="movie-details"><span class="movie-rating">R</span>
-        <span class="movie-duration">45min</span>
-        <span class="movie-genre">Suspenso, Policiaca, Drama</span>
+      <div class="movie-details"><span class="movie-rating">{{ serie?.age }}</span>
+        <span class="movie-duration">{{ serie?.duration }}</span>
+        <span class="movie-genre">{{ serie?.category }}</span>
       </div>
       <div class="movie-castcrew">
         <span class="title">Creador</span>
-        <span class="name">Vince Gilligan</span>
+        <span class="name">{{ serie?.creator }}</span>
       </div>
       <div class="movie-castcrew">
-        <span class="title">Productor</span><span class="name ml-1">Vince Gilligan</span>
+        <span class="title">Productor</span><span class="name ml-1">{{ serie?.writer }}</span>
       </div>
       <div class="movie-castcrew">
-        <span class="title">Cast</span><span class="name">Bryan Cranston, Aaron Paul, Anna Gunn</span>
+        <span class="title">Cast</span><span class="name">{{ serie?.cast }}</span>
       </div>
-      <div class="movie-synopsis">Walter White es un frustrado profesor de química en un instituto, padre de un joven discapacitado
-        y con una mujerembarazada. Además, trabaja en un lavadero de coches por las tardes. Cuando le diagnostican un cáncer
-        pulmonar terminal se plantea qué pasará con su familia cuando él muera.</div>
+      <div class="movie-synopsis" [innerHtml]="serie?.story"></div>
       <button class="btn btn-primary col-sm4 ml-5 mr-4" id="botons1" type="button">
         <img  class="mr-2" src="../assets/img/play.png" alt="" style="height: 20px; width: 20px">Marcar como Vista</button>
       <button class="btn btn-danger col-sm-4 ml-4" id="botons2" routerLink="/series" type="button">

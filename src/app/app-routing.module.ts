@@ -12,10 +12,10 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/noticias', pathMatch: 'full' },
   { path: 'noticias', component: NoticiasComponent },
   { path: 'peliculas', component: PeliculasComponent },
-  { path: 'peliculas/id', component: PeliculaInfoComponent },
+  { path: 'peliculas/:id', component: PeliculaInfoComponent },
   { path: 'series', component: SeriesComponent },
-  { path: 'series/id', component: SerieInfoComponent },
-  { path: 'noticias/id', component: NoticiasInfoComponent },
+  { path: 'series/:id', component: SerieInfoComponent },
+  { path: 'noticias/:id', component: NoticiasInfoComponent },
   { path: 'contactanos', component: ContactanosComponent },
 ];
 

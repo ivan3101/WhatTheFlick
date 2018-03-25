@@ -11,78 +11,24 @@
         </ol>
       </div>
 
-      <article class="post clearfix">
+      <article class="post clearfix" *ngFor="let article of articles | async">
 
-        <a routerLink="/noticias/id" class="thumb float-md-left">
-          <img class="img-thumbnail" src="../assets/img/noticias/oscars.jpg" id="imagen25" style="width: 339px; height: 175px" alt="">
+        <a [routerLink]="['/noticias', article._id]" class="thumb float-md-left">
+          <img class="img-thumbnail" [src]="article.imageUrl" id="imagen25" style="width: 339px; height: 175px" alt="">
         </a>
 
         <h2 class="post-title align-self-md-end">
-          <a routerLink="/noticias/id">Todos los nominados a los Premios Oscars 2018</a>
+          <a [routerLink]="['/noticias', article._id]">{{ article.title }}</a>
         </h2>
 
-        <p><span class="post-fecha">09 de Febrero de 2018 por</span> <span class="post-autor"><a routerLink="/noticias">Jean Mobayed</a></span></p>
+        <p><span class="post-fecha">{{ article.date | date }} por</span> <span class="post-autor"><a routerLink="/noticias">{{ article.autor }}</a></span></p>
 
-        <p class="post-contenido text-justify">
-          Los votantes del Oscar postularon nueve producciones a mejor película: "The Shape of Water",
-          ''Three Billboards Outside Ebbing, Missouri", ''Lady Bird", ''Get Out", ''The Post", ''Dunkirk", ''Call Me By Your Name"
-          y "Phantom Thread". "The Shape of Water" estuvo a punto de igualar el récord de 14 nominaciones que comparten "All About Eve" (“La malvada”),
-          ''Titanic" y "La La Land". El oscuro relato de fantasía de Del Toro recibió múltiples candidaturas por su elenco
-          (Sally Hawkins, Richard Jenkins, Octavia Spencer), su suntuosa música original (de Alexander Desplat) y su proeza técnica.
-        </p>
+        <p class="post-contenido text-justify">{{ article.story | slice:200}}</p>
 
         <div class="contenedor-botones">
-          <a routerLink="/noticias/id" class="btn btn-primary" id="boton1">
+          <a [routerLink]="['/noticias', article._id]" class="btn btn-primary" id="boton1">
             <img  class="mr-2" src="../assets/img/papel.png" alt="" style="height: 20px; width: 20px">Seguir Leyendo</a>
-          <a routerLink="/noticias/id" class="btn btn-success "id="boton2">
-            <img  class="mr-2" src="../assets/img/comentario.png" alt="" style="height: 20px; width: 20px">Comentarios <span class="badge badge-dark">20</span></a>
-        </div>
-
-      </article>
-
-      <article class="post clearfix">
-        <a routerLink="/noticias" class="thumb float-md-left">
-          <img class="img-thumbnail" src="../assets/img/noticias/deadpool.jpg" id="imagen26" style="width: 339px; height: 175px" alt="">
-        </a>
-        <h2 class="post-title">
-          <a routerLink="/noticias">Deadpool 2 estrena nuevo poster</a>
-        </h2>
-        <p><span class="post-fecha">09 de Febrero de 2018</span> por <span class="post-autor"><a routerLink="/noticias">Jean Mobayed</a></span></p>
-        <p class="post-contenido text-justify">
-          Deadpool 2 tiene nuevo póster y os aviso que es muy, muy ¿sexy? Ryan Reynolds ha compartido a través de sus redes
-          sociales el cartel-homenaje a Flashdance donde encontramos al mercenario bocazas imitando la famosa escena de baile
-          de la popular película de los ochenta.Reynolds, que vuelve a interpretar al gamberro antihéroe de Marvel, ha hecho
-          público el cartel con un eslogan de Flashdance, muy al estilo de Operación Triunfo: "Toma tu pasión y haz que suceda".
-        </p>
-
-        <div class="contenedor-botones align-content-between">
-          <a routerLink="/noticias" class="btn btn-primary" id="boton3">
-            <img  class="mr-2" src="../assets/img/papel.png" alt="" style="height: 20px; width: 20px">Seguir Leyendo</a>
-          <a routerLink="/noticias" class="btn btn-success" id="boton4">
-            <img  class="mr-2" src="../assets/img/comentario.png" alt="" style="height: 20px; width: 20px">Comentarios <span class="badge badge-dark">20</span></a>
-        </div>
-      </article>
-
-      <article class="post clearfix">
-        <a routerLink="/noticias/id" class="thumb float-md-left">
-          <img class="img-thumbnail" src="../assets/img/noticias/westworld.jpg" id="imagen27" style="width: 339px; height: 175px" alt="">
-        </a>
-        <h2 class="post-title">
-          <a routerLink="/noticiasid">No te pierdas el nuevo trailer de la segunda temporada de Westworld</a>
-        </h2>
-        <p><span class="post-fecha">09 de Febrero de 2018</span> por <span class="post-autor"><a routerLink="/noticias">Jean Mobayed</a></span></p>
-        <p class="post-contenido text-justify">
-          Estaba llamada a ser la gran superproducción de HBO para llenar el hueco de Juego de Tronos y
-          ciertamente, tras la primera temporada no dejó a casi nadie indiferente. Tras los problemas con
-          el rodaje, ya conocemos el nuevo trailer y la fecha de estreno de la segunda temporada de WestWorld.
-          Además de por sus archiconocidos anuncios, el descanso de la SuperBowl ya está empezando a ser esperado
-          por el estreno de trailers de grandes superproducciones, ya sea del cine y de la televisión.
-        </p>
-
-        <div class="container">
-          <a routerLink="/noticias" class="btn btn-primary" id="boton5">
-            <img  class="mr-2" src="../assets/img/papel.png" alt="" style="height: 20px; width: 20px">Seguir Leyendo</a>
-          <a routerLink="/noticias" class="btn btn-success" id="boton6">
+          <a [routerLink]="['/noticias', article._id]" class="btn btn-success "id="boton2">
             <img  class="mr-2" src="../assets/img/comentario.png" alt="" style="height: 20px; width: 20px">Comentarios <span class="badge badge-dark">20</span></a>
         </div>
 
@@ -116,31 +62,13 @@
       <hr>
       <h4 class="text-center">Articulos Destacados</h4>
       <div class="list-group row">
-        <a routerLink="/noticias" class="list-group-item list-group-item-action flex-column align-items-start">
+        <a [routerLink]="['/noticias', article._id]" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let article of articles | async">
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Todos los nominados a los Premios Oscars 2018</h5>
+            <h5 class="mb-1">{{ article.title }}</h5>
           </div>
           <hr>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small>09/12/08</small>
-        </a>
-
-        <a routerLink="/noticias" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Thor tendrá un nuevo martillo en 'Infinity Wars'</h5>
-          </div>
-          <hr>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small>12/01/18</small>
-        </a>
-
-        <a routerLink="/noticias" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Supervillanos que amamos</h5>
-          </div>
-          <hr>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small>13/12/17</small>
+          <p class="mb-1">{{ article.story | slice:60}}</p>
+          <small>{{ article.date | date }}</small>
         </a>
       </div>
 

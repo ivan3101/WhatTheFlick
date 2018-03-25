@@ -1,4 +1,6 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {SerieService} from '../services/serie.service';
 declare var jQuery: any;
 declare var $: any;
 
@@ -8,10 +10,15 @@ declare var $: any;
   styleUrls: ['./serie-info.component.css']
 })
 export class SerieInfoComponent implements OnInit, AfterViewChecked {
-
-  constructor() { }
+  serie;
+  serieId;
+  constructor(private route: ActivatedRoute, private serieService: SerieService) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((params: Params) => {
+      this.serieId = params.get('id');
+      this.serieService.getSerieById(this.serieId).subscribe(serie => this.serie = serie);
+    });
   }
 
   ngAfterViewChecked() {

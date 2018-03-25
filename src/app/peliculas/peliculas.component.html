@@ -16,115 +16,15 @@
         <!--<h2 class="titulo1">Agregadas Recientemente</h2>-->
         <!--<hr>-->
         <div class="row justify-content-center">
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card" routerLink="/peliculas/id">
-              <img class="card-img img-fluid" id="imagen1" src="/assets/img/peliculas/dunkirk.jpg"
+          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3" *ngFor="let movie of movies | async">
+            <div class="card" [routerLink]="['/peliculas', movie._id]">
+              <img class="card-img img-fluid" id="imagen1" [src]="movie.imageUrl"
                    style="width: 210px; height: 285px" alt="Card image">
               <div class="card-img-overlay">
-                <p class="card-text">Dunkirk</p>
+                <p class="card-text">{{ movie.title }}</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3 align-content-end">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen2" src="/assets/img/peliculas/blade.png"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Blade Runner 2049</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen3" src="/assets/img/peliculas/billboards.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Three Billboards Outside Ebbing, Missouri</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen4" src="/assets/img/peliculas/jedi.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Star Wars: The Last Jedi</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen5" src="/assets/img/peliculas/whiplash.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Whiplash</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen6" src="/assets/img/peliculas/tonya.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">I, Tonya</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen7" src="/assets/img/peliculas/shape.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Shape Of Water</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen8" src="/assets/img/peliculas/phantom.jpeg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Phantom Thread</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen9" src="/assets/img/peliculas/cmbyn.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Call Me By Your Name</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen10" src="/assets/img/peliculas/coco.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Coco</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen11" src="/assets/img/peliculas/panther.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Black Panther</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-6 col-sm-6 col-lg-3">
-            <div class="card">
-              <img class="card-img img-fluid" id="imagen12" src="/assets/img/peliculas/maze.jpg"
-                   style="width: 210px; height: 285px" alt="Card image">
-              <div class="card-img-overlay">
-                <p class="card-text">Maze Runner: The Death Cure</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="col-lg-2 d-none d-sm-none d-lg-block ml-5 pl-3 align-content-end">

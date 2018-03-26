@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {UserService} from '../services/user.service';
 
 declare var jQuery: any;
 declare var $: any;
@@ -8,11 +10,14 @@ declare var $: any;
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+
 })
 export class HeaderComponent implements OnInit {
   estado: string;
   accesibilidad: boolean;
+  registroForm: FormGroup;
+  logueoForm: FormGroup;
   public dalton() {
     console.log('click');
     if (!this.accesibilidad) {
@@ -163,11 +168,60 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private userService: UserService) {
     this.accesibilidad = false;
     this.estado = 'Activar Accesibilidad';
   }
   ngOnInit() {
+    this.registroForm = new FormGroup({
+      'fullName': new FormControl(null, Validators.required),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'username': new FormControl(null, Validators.required),
+      'password': new FormGroup({
+        'newPassword': new FormControl(null, Validators.required),
+        'confirmPassword': new FormControl(null, Validators.required)
+      }, this.matchPassword)
+    });
+    this.logueoForm = new FormGroup({
+      'username': new FormControl(null, Validators.required),
+      'password': new FormControl(null, Validators.required)
+    });
   }
-
+  matchPassword(formGroup: AbstractControl) {
+    if (formGroup.value.newPassword === formGroup.value.confirmPassword) {
+      return null;
+    } else {
+      return {valid: false};
+    }
+  }
+  onRegister() {
+    const user = {
+      'fullName': this.registroForm.value.fullName,
+      'email': this.registroForm.value.email,
+      'username': this.registroForm.value.username,
+      'password': this.registroForm.value.password.newPassword
+    };
+    console.log(user);
+    this.userService.addUser(user).subscribe(value => {
+        this.registroForm.reset();
+      },
+      err => {
+        console.log(err);
+      });
+  }
+  onLogin() {
+    const user = {
+      'username': this.logueoForm.value.username,
+      'password': this.logueoForm.value.password
+    };
+    this.userService.login(user).subscribe(data => {
+        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('token', data.token);
+        this.userService.session.next(true);
+      },
+      err => {
+        console.log(err);
+      });
+    this.logueoForm.reset();
+  }
 }

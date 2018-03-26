@@ -42,7 +42,7 @@
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
-    <form class="modal-content">
+    <form class="modal-content" [formGroup]="logueoForm" (ngSubmit)="onLogin()">
       <div class="modal-header navbar" id="modal1">
         <h5 class="modal-title text-center" id="exampleModalLabel">
           <img src="../assets/img/sesion.png" class="mr-4" style="width: 32px;height: 32px;" alt="">Iniciar Sesión</h5>
@@ -54,20 +54,20 @@
             <div class="form-group row">
           <label for="usuario" class="col-4 col-form-label">Usuario: </label>
           <div class="col-8">
-            <input class="form-control" type="text" value="" id="usuario" placeholder="Su usuario" required>
+            <input class="form-control" type="text" value="" id="usuario" placeholder="Su usuario" formControlName="username">
           </div>
         </div>
         <div class="form-group row">
           <label class="col-4 col-form-label">Contraseña:</label>
           <div class="col-8">
-            <input class="form-control" type="password" value="" id="contraseña" placeholder="Su contraseña" required>
+            <input class="form-control" type="password" value="" id="contraseña" placeholder="Su contraseña" formControlName="password">
           </div>
         </div>
         <div class="row">
           <a href="" class="col-12 ml-2" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">¿No tienes una cuenta? ¡Registrate!</a>
         </div>
         <div class="modal-footer footer justify-content-center">
-          <button type="submit" class="btn btn-primary mr-4" id="botonh1">
+          <button type="submit" class="btn btn-primary mr-4" id="botonh1" [disabled]="!logueoForm.valid && logueoForm.touched">
             <img  class="mr-2" src="../assets/img/play.png" alt="" style="height: 20px; width: 20px">Continuar</button>
           <button type="button" class="btn btn-danger ml-4" id="botonh2" data-dismiss="modal">
             <img  class="mr-2" src="../assets/img/atras.png" alt="" style="height: 20px; width: 20px">Cerrar</button>
@@ -81,7 +81,7 @@
 
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <form class="modal-content">
+    <form class="modal-content" [formGroup]="registroForm" (ngSubmit)="onRegister()">
       <div class="modal-header navbar" id="modal2">
         <h5 class="modal-title" id="exampleModalLabel2">
           <img src="../assets/img/registrarse.png" class="mr-4" style="width: 32px;height: 32px;" alt="">Registro</h5>
@@ -95,33 +95,36 @@
             <div class="form-group row justify-content-center">
               <label class="col-3 col-form-label">Nombre: </label>
               <div class="col-9">
-                <input class="form-control" type="text" value="" id="nombre" placeholder="Su nombre">
+                <input class="form-control" type="text" value="" id="nombre" placeholder="Su nombre" formControlName="fullName">
               </div>
             </div>
               <div class="form-group row">
                 <label class="col-3 col-form-label">Correo: </label>
                 <div class="col-9">
-                  <input class="form-control" type="email" value="" id="email" placeholder="Su correo">
+                  <input class="form-control" type="email" value="" id="email" placeholder="Su correo" formControlName="email">
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-3 col-form-label">Usuario: </label>
                 <div class="col-9">
-                  <input class="form-control" type="text" value="" id="usuario2" placeholder="Su usuario">
+                  <input class="form-control" type="text" value="" id="usuario2" placeholder="Su usuario" formControlName="username">
                 </div>
               </div>
-              <div class="form-group row">
+            <div formGroupName="password">
+              <div class="form-group row" >
                 <label class="col-3 col-form-label">Contraseña:</label>
                 <div class="col-9">
-                  <input class="form-control" type="password" value="" id="contraseña2" placeholder="Su contraseña">
+                  <input class="form-control" type="password" value="" id="contraseña2" placeholder="Su contraseña" formControlName="newPassword">
                 </div>
               </div>
               <div class="form-group row align-items-center">
                 <label class="col-3 col-form-label">Confirmar contraseña:</label>
                 <div class="col-9">
-                  <input class="form-control" type="password" value="" id="contraseña3" placeholder="Confirme su contraseña">
+                  <input class="form-control" type="password" value="" id="contraseña3" placeholder="Confirme su contraseña" formControlName="confirmPassword">
                 </div>
               </div>
+            </div>
+
           </div>
           <div class="row">
             <a href="" class="col-12 text-center" data-dismiss="modal" data-toggle="modal" data-target="#myModal">
@@ -130,7 +133,7 @@
         </div>
       </div>
       <div class="modal-footer footer justify-content-center">
-        <button type="button" class="btn btn-primary mr-4" id="botonh3">
+        <button type="submit" class="btn btn-primary mr-4" id="botonh3" [disabled]="!registroForm.valid && registroForm.touched">
           <img  class="mr-2" src="../assets/img/plus.png" alt="" style="height: 20px; width: 20px">Crear</button>
         <button type="button" class="btn btn-danger ml-4" id="botonh4" data-dismiss="modal">
           <img  class="mr-2" src="../assets/img/atras.png" alt="" style="height: 20px; width: 20px">Cerrar</button>

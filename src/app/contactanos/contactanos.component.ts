@@ -1,4 +1,5 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 declare var jQuery: any;
 declare var $: any;
 
@@ -8,10 +9,15 @@ declare var $: any;
   styleUrls: ['./contactanos.component.css']
 })
 export class ContactanosComponent implements OnInit, AfterViewChecked {
-
+  contactForm: FormGroup;
   constructor() { }
 
   ngOnInit() {
+    this.contactForm = new FormGroup({
+      'asunto': new FormControl(null, Validators.required),
+      'email': new FormControl(null, Validators.required),
+      'mensaje': new FormControl(null, Validators.required)
+    });
   }
 
   ngAfterViewChecked() {
@@ -156,4 +162,8 @@ export class ContactanosComponent implements OnInit, AfterViewChecked {
       $('#botonc2').addClass('btn-danger');
     }
   }
+  onSubmit() {
+    this.contactForm.reset();
+  }
 }
+

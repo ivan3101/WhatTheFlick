@@ -9,7 +9,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { PeliculasComponent } from './peliculas/peliculas.component';
 import { SeriesComponent } from './series/series.component';
 import { ContactanosComponent } from './contactanos/contactanos.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import { PeliculaInfoComponent } from './pelicula-info/pelicula-info.component';
 import { SerieInfoComponent } from './serie-info/serie-info.component';
@@ -39,10 +39,11 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    // FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     ArticleService,

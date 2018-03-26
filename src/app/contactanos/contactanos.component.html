@@ -41,27 +41,27 @@
           renace en cada saboreador..<strong>”</strong></em></p><br><br><br>
         <h2 class="">— Federico Fellini </h2>
       </div>
-      <form class="form col-6 ml-4"  method="post" action="">
+      <form class="form col-6 ml-4" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="">
           <div class="form-row mt-2">
             <div class="form-group col-md-6">
               <label for="asunto"><strong>Asunto:</strong></label>
-              <input type="text" name="asunto" class="form-control" id="asunto" placeholder="Asunto" required>
+              <input type="text" name="asunto" class="form-control" id="asunto" placeholder="Asunto" formControlName="asunto">
             </div>
             <div class="form-group col-md-6">
               <label for="correo"><strong>Correo:</strong></label>
-              <input type="email" name="correo" class="form-control" id="correo" placeholder="Correo" required>
+              <input type="email" name="correo" class="form-control" id="correo" placeholder="Correo" formControlName="email">
             </div>
           </div>
           <div class="form-row justify-content-center">
             <div class="form-group col-lg-12">
               <label><strong>Mensaje:</strong></label>
-              <textarea class="form-control" name="mensaje" id="mensaje" rows="5" style="resize: none;" placeholder="Su mensaje..." required></textarea>
+              <textarea class="form-control" name="mensaje" id="mensaje" rows="5" style="resize: none;" placeholder="Su mensaje..." formControlName="mensaje"></textarea>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-lg-12 text-center">
-              <button type="submit" class="btn btn-success mt-2 text-center" name="botonc1" id="botonc1">
+              <button type="submit" class="btn btn-success mt-2 text-center" name="botonc1" id="botonc1" [disabled]="!contactForm.valid && contactForm.touched">
                 <img  class="mr-2 " src="../assets/img/enviar.png"  alt="" style="height: 20px; width: 20px">Enviar</button>
             </div>
           </div>
